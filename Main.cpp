@@ -109,6 +109,8 @@ void solve() {
     cin >> a >> b;
     cout << "GCD: " << gcd(a, b) << "\n";
     cout << "LCM: " << lcm(a, b) << "\n";
+
+    cout <<"Test cases completed\n";
 }
 
 int main() {
