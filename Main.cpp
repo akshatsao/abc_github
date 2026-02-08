@@ -78,7 +78,37 @@ ll lcm(ll a, ll b) {
 }
 
 void solve() {
-    cout << "Hello, World!" << endl;
+    int n, target;
+    cin >> n >> target;
+    vector<int> nums(n);
+    for (int& num : nums) cin >> num;
+
+    int index = binarysearch(nums, target);
+    if (index != -1) {
+        cout << "Element found at index: " << index << "\n";
+    } else {
+        cout << "Element not found in the array.\n";
+    }
+
+    vector<vector<int>> subarrays = makeSubarrays(nums);
+    cout << "All subarrays:\n";
+    for (const auto& subarray : subarrays) {
+        for (int num : subarray) cout << num << " ";
+        cout << "\n";
+    }
+
+    int primeCheck;
+    cin >> primeCheck;
+    if (sieveOfEratosthenes(primeCheck)) {
+        cout << primeCheck << " is a prime number.\n";
+    } else {
+        cout << primeCheck << " is not a prime number.\n";
+    }
+
+    ll a, b;
+    cin >> a >> b;
+    cout << "GCD: " << gcd(a, b) << "\n";
+    cout << "LCM: " << lcm(a, b) << "\n";
 }
 
 int main() {
